@@ -1,0 +1,11 @@
+#%Module1.0
+module-whatis "beast2"
+module-whatis "Version: VERSION"
+module-whatis "Description: beast2"
+set     beast2home       /opt/beast2/VERSION
+setenv  BEAST           $beast2home
+setenv  BEAST_HOME      $beast2home
+setenv  BEAST_LIB       $beast2home/lib
+append-path     PATH    $beast2home/bin
+append-path     LD_LIBRARY_PATH $beast2home/lib
+append-path     CLASSPATH       $beast2home/lib/beast.jar
