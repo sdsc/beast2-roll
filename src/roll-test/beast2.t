@@ -12,12 +12,7 @@ my $installedOnAppliancesPattern = '.';
 my $isInstalled = -d '/opt/beast2';
 my $output;
 
-# beast2-doc.xml
-my $TESTFILE='tmpbeast2';
-SKIP: {
-  skip 'not server', 1 if $appliance ne 'Frontend';
-  ok(-d '/var/www/html/roll-documentation/beast2', 'doc installed');
-}
+my $TESTFILE = 'tmpbeast2';
 
 # beast2-install.xml
 if($appliance =~ /$installedOnAppliancesPattern/) {
@@ -31,12 +26,12 @@ SKIP: {
   skip 'beast2 not installed', 4 if ! $isInstalled;
   $output = `cd $TESTFILE.dir;. /etc/profile.d/modules.sh;module load beast2; beast2 /opt/beast2/2.1.3/examples/testHKY.xml 2>&1`;
   ok($output =~ /beast.evolution.operators.WilsonBalding/, 'beast2 2.1.3 run');
-  skip 'modules not installed', 3 if ! -f '/etc/profile.d/modules.sh';
   `/bin/ls /opt/modulefiles/applications/beast2/[0-9]* 2>&1`;
   ok($? == 0, 'beast2 module installed');
   `/bin/ls /opt/modulefiles/applications/beast2/.version.[0-9]* 2>&1`;
   ok($? == 0, 'beast2 version module installed');
   ok(-l '/opt/modulefiles/applications/beast2/.version',
      'beast2 version module link created');
-   `rm -rf $TESTFILE.dir`;
 }
+
+`rm -fr $TESTFILE*`;

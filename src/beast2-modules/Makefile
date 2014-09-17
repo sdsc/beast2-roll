@@ -58,7 +58,6 @@
 # $Log$
 #
 
-PKGROOT = /opt/modulefiles/applications/beast2
 REDHAT.ROOT = $(CURDIR)/../../
 
 -include $(ROCKSROOT)/etc/Rules.mk
@@ -67,17 +66,11 @@ include Rules.mk
 build:
 
 install::
-	  mkdir -p $(ROOT)/$(PKGROOT)
-	  echo $(VERSION)
-	  cp beast2.module $(ROOT)/$(PKGROOT)/$(VERSION)
-	  cp beast2.version $(ROOT)/$(PKGROOT)/.version.$(VERSION)
-	  perl -pi -e 's/VERSION/$(VERSION)/g' $(ROOT)/$(PKGROOT)/.version.$(VERSION)
-	  perl -pi -e 's/VERSION/$(VERSION)/g' $(ROOT)/$(PKGROOT)/$(VERSION)
-	  ln -s $(PKGROOT)/.version.$(VERSION) $(ROOT)/$(PKGROOT)/.version
-
-	  cp beast2.module $(ROOT)/$(PKGROOT)/2.1.3
-	  cp beast2.version $(ROOT)/$(PKGROOT)/.version.2.1.3
-	  perl -pi -e 's/VERSION/$(VERSION)/g' $(ROOT)/$(PKGROOT)/.version.$(VERSION)
-	  perl -pi -e 's/VERSION/$(VERSION)/g' $(ROOT)/$(PKGROOT)/$(VERSION)
+	mkdir -p $(ROOT)/$(PKGROOT)
+	cp *.module $(ROOT)/$(PKGROOT)/$(VERSION)
+	cp *.version $(ROOT)/$(PKGROOT)/.version.$(VERSION)
+	perl -pi -e 's#VERSION#$(VERSION)#g' \
+	  $(ROOT)/$(PKGROOT)/.version.$(VERSION) $(ROOT)/$(PKGROOT)/$(VERSION)
+	ln -s $(PKGROOT)/.version.$(VERSION) $(ROOT)/$(PKGROOT)/.version
 
 clean::

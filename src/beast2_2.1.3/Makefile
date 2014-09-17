@@ -68,10 +68,7 @@ build: $(SRC_DIRS)
 
 install::
 	mkdir -p -m 755 $(ROOT)/$(PKGROOT)
-	( \
-          cd $(SOURCE_DIR); \
-	  cp -r * $(ROOT)/$(PKGROOT); \
-	)
+	cp -r $(SOURCE_DIR)/* $(ROOT)/$(PKGROOT)
 	@echo "::: Package $(NAME) install complete :::"
 
 clean::
