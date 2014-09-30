@@ -1,8 +1,11 @@
-NAME        = beast2-modules
-RELEASE     = 1
-PKGROOT     = /opt/modulefiles/applications/beast2
+PACKAGE     = beast2
+CATEGORY    = applications
 
-VERSION_SRC = $(REDHAT.ROOT)/src/beast2_2.1.3/version.mk
+NAME        = $(PACKAGE)-modules
+RELEASE     = 2
+PKGROOT     = /opt/modulefiles/$(CATEGORY)/$(PACKAGE)
+
+VERSION_SRC = $(REDHAT.ROOT)/src/$(PACKAGE)_2.1.3/version.mk
 VERSION_INC = version.inc
 include $(VERSION_INC)
 
