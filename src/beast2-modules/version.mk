@@ -1,8 +1,8 @@
 PACKAGE     = beast2
 CATEGORY    = applications
 
-NAME        = $(PACKAGE)-modules
-RELEASE     = 2
+NAME        = sdsc-$(PACKAGE)-modules
+RELEASE     = 3
 PKGROOT     = /opt/modulefiles/$(CATEGORY)/$(PACKAGE)
 
 VERSION_SRC = $(REDHAT.ROOT)/src/$(PACKAGE)_2.1.3/version.mk
