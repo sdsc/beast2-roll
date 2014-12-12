@@ -64,7 +64,7 @@ include Rules.mk
 include $(SDSCDEVEL)/Pull.mk
 include $(SDSCDEVEL)/Rules.mk
 
-LICENSE_FILES = $(SOURCE_DIR)/LICENSE.txt
+LICENSE_FILES = $(SOURCE_DIR)/{LICENSE,README}.txt
 
 $(NAME).spec: DESCRIPTION LICENSE
 
@@ -74,9 +74,7 @@ DESCRIPTION:
 	) > $@
 
 LICENSE: $(SRC_DIRS)
-	if ! grep -qF "GNU LESSER GENERAL PUBLIC LICENSE" $(LICENSE_FILES); then \
-	  exit 2; \
-	fi
+	$(CHECK_LICENSE_FILES)
 	echo LPGL > $@
 
 build: $(SRC_DIRS)
