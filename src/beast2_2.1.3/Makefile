@@ -64,8 +64,6 @@ include Rules.mk
 include $(SDSCDEVEL)/Pull.mk
 include $(SDSCDEVEL)/Rules.mk
 
-LICENSE_FILES = $(SOURCE_DIR)/{LICENSE,README}.txt
-
 $(NAME).spec: DESCRIPTION LICENSE
 
 DESCRIPTION:
