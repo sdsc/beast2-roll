@@ -1,6 +1,6 @@
-ROLLNAME	= beast2
-VERSION		= 1.0
-RELEASE		= 0
-COLOR		= firebrick
+ROLLNAME        = beast2
+VERSION        :=$(shell bash version.sh -v)
+RELEASE        :=$(shell bash version.sh -h)
+COLOR           = orange
 
-REDHAT.ROOT	= $(CURDIR)
+REDHAT.ROOT     = $(PWD)
