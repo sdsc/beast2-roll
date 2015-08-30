@@ -1,6 +1,6 @@
 NAME           = sdsc-beast2_$(VERSION)
-VERSION        = 2.1.3
-RELEASE        = 2
+VERSION        = 2.3.0
+RELEASE        = 0
 PKGROOT        = /opt/beast2/$(VERSION)
 
 SRC_SUBDIR     = beast2
