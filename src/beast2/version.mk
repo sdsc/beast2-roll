@@ -1,4 +1,4 @@
-NAME           = sdsc-beast2_$(VERSION)
+NAME           = sdsc-beast2
 VERSION        = 2.3.0
 RELEASE        = 0
 PKGROOT        = /opt/beast2/$(VERSION)
