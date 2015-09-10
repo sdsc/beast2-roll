@@ -24,8 +24,10 @@ SKIP: {
 
   `mkdir -p $TESTFILE.dir`;
   skip 'beast2 not installed', 4 if ! $isInstalled;
-  $output = `cd $TESTFILE.dir;. /etc/profile.d/modules.sh;module load beast2; beast2 /opt/beast2/2.3.0/examples/testHKY.xml 2>&1`;
-  ok($output =~ /beast.evolution.operators.WilsonBalding/, 'beast2 2.3.0 run');
+  $output = `cd $TESTFILE.dir;. /etc/profile.d/modules.sh;module load beast2; beast /opt/beast2/2.3.0/examples/testHKY.xml 2>&1`;
+  ok($output =~ /WilsonBalding\(wilsonBalding\)/, 'beast2 2.3.0 run');
+  `rm -rf $TESTFILE.dir`;
+  `mkdir -p $TESTFILE.dir`;
   $output = `cd $TESTFILE.dir;. /etc/profile.d/modules.sh;module load beast2/2.1.3; beast2 /opt/beast2/2.1.3/examples/testHKY.xml 2>&1`;
   ok($output =~ /beast.evolution.operators.WilsonBalding/, 'beast2 2.1.3 run');
   `/bin/ls /opt/modulefiles/applications/beast2/[0-9]* 2>&1`;
