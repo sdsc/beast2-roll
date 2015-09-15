@@ -12,3 +12,4 @@ include $(VERSION_INC)
 EXTRA_MODULE_VERSIONS = 2.1.3
 
 RPM.EXTRAS  = AutoReq:No
+RPM.EXTRAS  = Obsoletes: $(PACKAGE)-modules
