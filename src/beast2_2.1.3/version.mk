@@ -13,6 +13,10 @@ SOURCE_DIR     = $(SOURCE_NAME)-$(SOURCE_VERSION)
 
 TAR_GZ_PKGS    = $(SOURCE_PKG)
 
+<<<<<<< Updated upstream
 RPM.EXTRAS     = AutoReq:No
 RPM.EXTRAS     = Obsoletes: beast2_$(VERSION) 
 RPM.PREFIX     = $(PKGROOT)
+=======
+RPM.EXTRAS     = AutoReq:No\nObsoletes: beast2_$(VERSION)\nAutoProv:No
+>>>>>>> Stashed changes

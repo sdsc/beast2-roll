@@ -9,6 +9,10 @@ VERSION_SRC = $(REDHAT.ROOT)/src/$(PACKAGE)_2.1.3/version.mk
 VERSION_INC = version.inc
 include $(VERSION_INC)
 
+<<<<<<< Updated upstream
 RPM.EXTRAS  = AutoReq:No
 RPM.EXTRAS  = Obsoletes: $(PACKAGE)-modules
 RPM.PREFIX  = $(PKGROOT)
+=======
+RPM.EXTRAS  = AutoReq:No\nObsoletes: $(PACKAGE)-modules\nAutoProv:No
+>>>>>>> Stashed changes
