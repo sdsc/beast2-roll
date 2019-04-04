@@ -1,6 +1,6 @@
 NAME       = sdsc-beast2-roll-test
 VERSION    = 1
-RELEASE    = 2
+RELEASE    = 3
 PKGROOT    = /root/rolltests
 
 RPM.FILES  = $(PKGROOT)/beast2.t
