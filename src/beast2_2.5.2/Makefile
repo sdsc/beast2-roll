@@ -82,6 +82,10 @@ build: $(SRC_DIRS)
 install::
 	mkdir -p -m 755 $(ROOT)/$(PKGROOT)
 	cp -r $(SOURCE_DIR)/* $(ROOT)/$(PKGROOT)
+	( \
+            cd $(ROOT)/$(PKGROOT)/bin; \
+	    ln -s beast beast2 \
+        )
 	$(INSTALL_LICENSE_FILES)
 	@echo "::: Package $(NAME) install complete :::"
 
